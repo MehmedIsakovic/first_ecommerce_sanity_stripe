@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   AiOutlineMinus,
   AiOutlinePlus,
@@ -21,15 +21,26 @@ const ProductDetails = ({ product, products }) => {
     setShowCart(true);
   };
 
+  useEffect(() => {
+    setIndex(0);
+  }, [product]);
+
   return (
     <div>
       <div className="product-detail-container">
         <div>
           <div className="image-container">
-            <img
-              src={urlFor(image && image[index])}
-              className="product-detail-image"
-            />
+            <img src={urlFor(image[0])} className="product-detail-image" />
+            {/* {image[index] ? (
+              <img
+                src={urlFor(image[index])}
+                className="product-detail-image"
+              />
+            ) : (
+              setIndex(0) && (
+                <img src={urlFor(image[0])} className="product-detail-image" />
+              )
+            )} */}
           </div>
           <div className="small-images-container">
             {image?.map((item, i) => (
@@ -92,7 +103,10 @@ const ProductDetails = ({ product, products }) => {
       <div className="maylike-products-wrapper">
         <h2>You May Also Like</h2>
         <div className="marquee">
-          <div className="maylike-products-container track">
+          <div
+            className="maylike-products-container track"
+            // onMouseEnter={() => setIndex(0)}
+          >
             {products.map((item) => (
               <Product key={item._id} product={item} />
             ))}
