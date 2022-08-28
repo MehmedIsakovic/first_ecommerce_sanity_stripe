@@ -30,8 +30,7 @@ const ProductDetails = ({ product, products }) => {
       <div className="product-detail-container">
         <div>
           <div className="image-container">
-            <img src={urlFor(image[0])} className="product-detail-image" />
-            {/* {image[index] ? (
+            {image[index] ? (
               <img
                 src={urlFor(image[index])}
                 className="product-detail-image"
@@ -40,7 +39,7 @@ const ProductDetails = ({ product, products }) => {
               setIndex(0) && (
                 <img src={urlFor(image[0])} className="product-detail-image" />
               )
-            )} */}
+            )}
           </div>
           <div className="small-images-container">
             {image?.map((item, i) => (
@@ -51,6 +50,7 @@ const ProductDetails = ({ product, products }) => {
                   i === index ? "small-image selected-image" : "small-image"
                 }
                 onMouseEnter={() => setIndex(i)}
+                onClick={() => setIndex(i)}
               />
             ))}
           </div>

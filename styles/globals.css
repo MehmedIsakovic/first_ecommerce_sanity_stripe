@@ -611,22 +611,25 @@ span.text-red {
 @media screen and (max-width: 800px) {
   .hero-banner-container {
     height: 560px;
+    z-index: -1;
   }
   .hero-banner-image {
     width: 77%;
-    height: 62%;
-    top: -2%;
-    right: -6%;
+    height: 52%;
+    top: 28%;
+    z-index: -1;
+    right: -10px;
   }
   .footer-banner-container {
     height: 560px;
     margin-top: 80px;
+    z-index: -1;
   }
   .footer-banner-image {
     width: 77%;
-    left: 30%;
-    top: 6%;
-    height: 56%;
+    height: 52%;
+    top: 0%;
+    z-index: -1;
   }
   .banner-desc .left h3 {
     font-weight: 900;
